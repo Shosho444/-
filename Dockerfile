@@ -11,9 +11,10 @@ RUN mkdir /rails_practice
 WORKDIR /rails_practice
 COPY Gemfile Gemfile.lock /rails_practice/
 RUN bundle install
-COPY package.json yarn.lock /ails_practice/
+COPY package.json yarn.lock /rails_practice/
 RUN yarn install
 RUN yarn add daisyui
+RUN yarn add @fortawesome/fontawesome-free
 COPY . /rails_practice
 
 COPY entrypoint.sh /usr/bin/
